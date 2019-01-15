@@ -54,7 +54,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x"));
+    (0, uint256("0x0x0000099eddbd0f2545469dd4dc225bd6ed1b230c7bed47614ba4f2cc470d35ee"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1547563418, // * UNIX timestamp of last checkpoint block
@@ -161,40 +161,11 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1547563418;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 236551;
-        if(genesis.GetHash()!=uint256("0x"))
-        {
-            printf("Searchingforgenesisblock...\n");
-            uint256 hashTarget=uint256().SetCompact(genesis.nBits);
-
-
-            printf("hashTarget:%s\n",hashTarget.ToString().c_str());
-
-            while(uint256(genesis.GetHash())>hashTarget)
-            {
-                printf("loop:%s\n",genesis.GetHash().ToString().c_str());
-                ++genesis.nNonce;
-                if(genesis.nNonce==0)
-                {
-                    printf("NONCEWRAPPED,incrementingtime");
-                    std::cout<<std::string("NONCEWRAPPED,incrementingtime:\n");
-                    ++genesis.nTime;
-                }
-                if(genesis.nNonce%10000==0)
-                {
-                    printf("Mainnet:nonce%08u:hash=%s\n",genesis.nNonce,genesis.GetHash().ToString().c_str());
-                }
-            }
-            printf("block.nTime=%u\n",genesis.nTime);
-            printf("block.nNonce=%u\n",genesis.nNonce);
-            printf("block.GetHash=%s\n",genesis.GetHash().ToString().c_str());
-            printf("hashMerkleRoot=%s\n",genesis.hashMerkleRoot.ToString().c_str());
-
-        }
+        genesis.nNonce = 2189625;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x"));
-        assert(genesis.hashMerkleRoot == uint256("0x"));
+        assert(hashGenesisBlock == uint256("0x0000099eddbd0f2545469dd4dc225bd6ed1b230c7bed47614ba4f2cc470d35ee"));
+        assert(genesis.hashMerkleRoot == uint256("0x609aa36d60b85c156c6aeeb5f22a683566fa6c16c532d65327c562344de28830"));
 
 //    	vSeeds.push_back(CDNSSeedData("seed1.cdmcoin.org", "seed1.cdmcoin.org"));             // seed1
 //      vSeeds.push_back(CDNSSeedData("seed2.cdmcoin.org", "seed2.cdmcoin.org"));             // seed2
