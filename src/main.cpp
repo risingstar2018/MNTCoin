@@ -2127,16 +2127,16 @@ int64_t GetBlockValue(int nHeight)
     }
 
       if (nHeight == 0) {
-             nSubsidy = 100000 * COIN;
-      } else if (nHeight <= 500 && nHeight > 0) {
-                nSubsidy = 0.25 * COIN;
-      } else if (nHeight <= 800 && nHeight > 500) {
+             nSubsidy = 300000 * COIN;
+      } else if (nHeight <= 600 && nHeight > 0) {
+                nSubsidy = 5 * COIN;
+      } else if (nHeight <= 5000 && nHeight > 600) {
           nSubsidy = 0.5 * COIN;
-      } else if (nHeight <= 1500 && nHeight > 800) {
+      } else if (nHeight <= 9000 && nHeight > 5000) {
           nSubsidy = 25 * COIN;
-      } else if (nHeight <= 3000 && nHeight > 1500) {
+      } else if (nHeight <= 14000 && nHeight > 9000) {
           nSubsidy = 75 * COIN;
-      } else if (nHeight <= 19000 && nHeight > 3000) {
+      } else if (nHeight <= 19000 && nHeight > 14000) {
           nSubsidy = 400 * COIN;
       } else if (nHeight <= 25000 && nHeight > 19000) {
           nSubsidy = 1000 * COIN;
@@ -2188,9 +2188,11 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     int64_t ret = 0;
 
 	// 90% for Masternodes from block 1000
-	if (nHeight > 500 && nHeight <= 800 ) {
+	if (nHeight <= 100) {
+	      ret = blockValue  / 100 * 0;               // %0
+	} else if (nHeight > 100 && nHeight <= Params().getFunDevForkBlock() ) {
 		  ret = blockValue  / 100 * 90;               // %90
-	} else if (nHeight > 800 && nHeight <= 15000 ) {
+	} else if (nHeight > Params().getFunDevForkBlock() ) {
 		  ret = blockValue  / 100 * 75;               // %75 for masternode from block 330k
 	}
 
