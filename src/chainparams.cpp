@@ -105,7 +105,7 @@ public:
         pchMessageStart[2] = 0x0c;
         pchMessageStart[3] = 0x18;
         vAlertPubKey = ParseHex("04387bb6355c2adf1cb4f7880d515273a12ec72d16e951e14afaaafd80d5905172b43516d9e948be98047bb136aba5521b2671c58b9c3c7791cb0916918d80e2c1");
-        nDefaultPort = 73588;
+        nDefaultPort = 57175;
         bnProofOfWorkLimit = ~uint256(0) >> 20; //20 Condominium starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;

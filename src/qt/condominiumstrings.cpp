@@ -226,10 +226,10 @@ QT_TRANSLATE_NOOP("condominium-core", ""
 QT_TRANSLATE_NOOP("condominium-core", ""
 "You must specify a masternodeprivkey in the configuration. Please see "
 "documentation for help."),
-QT_TRANSLATE_NOOP("condominium-core", "(73588 could be used only on mainnet)"),
+QT_TRANSLATE_NOOP("condominium-core", "(57175 could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("condominium-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("condominium-core", "(default: 1)"),
-QT_TRANSLATE_NOOP("condominium-core", "(must be 73588 for mainnet)"),
+QT_TRANSLATE_NOOP("condominium-core", "(must be 57175 for mainnet)"),
 QT_TRANSLATE_NOOP("condominium-core", "<category> can be:"),
 QT_TRANSLATE_NOOP("condominium-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("condominium-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),
